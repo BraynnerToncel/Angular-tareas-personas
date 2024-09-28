@@ -1,7 +1,7 @@
 .todo-card {
     margin: 20px auto;
     max-width: 600px;
-    text-align: center; /* Centra el texto dentro del card */
+    text-align: center;
     border: 1px solid #ccc;
     border-radius: 8px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
@@ -16,13 +16,13 @@
   .header-container {
     padding: 16px;
     border-bottom: 1px solid #eee;
-    text-align: center; /* Centra el contenido del header */
+    text-align: center; 
   }
   
   .header-content {
     display: flex;
-    flex-direction: column; /* Asegura que el título y el subtítulo se coloquen en columnas */
-    align-items: center; /* Centra horizontalmente el contenido */
+    flex-direction: column; 
+    align-items: center; 
   }
   
   .date-container {
@@ -32,39 +32,39 @@
   
   .people-container {
     margin-top: 10px;
-    text-align: center; /* Centra el texto de las personas asociadas */
+    text-align: center; 
   }
   
   .skills-list {
-    list-style-type: none; /* Quita los puntos de la lista */
+    list-style-type: none; 
     padding-left: 0;
     margin-top: 5px;
   }
   
   .small-dropdown {
     max-width: 150px;
-    margin: 10px auto; /* Centramos el dropdown con un margen superior */
+    margin: 10px auto; 
   }
   
   .status-container {
     margin-top: 20px;
-    text-align: center; /* Centra el texto del status */
+    text-align: center; 
   }
   
   .actions-container {
     display: flex;
-    justify-content: center; /* Centra el botón eliminar */
+    justify-content: center; 
     margin-top: 10px;
     margin-bottom: 10px;
   }
   .small-dropdown {
-    max-width: 100px; /* Cambia este valor para ajustar el ancho del dropdown */
-    margin: 10px auto; /* Mantén el centrado */
-    font-size: 0.85em; /* Reduce el tamaño de fuente del dropdown */
+    max-width: 100px; 
+    margin: 10px auto; 
+    font-size: 0.85em; 
   }
   
   .status-container {
     margin-top: 20px;
-    text-align: center; /* Centra el texto del status */
+    text-align: center; 
   }
   

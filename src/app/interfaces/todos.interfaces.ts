@@ -3,8 +3,8 @@ export interface Todo {
   description: string;
   status: TodoStatus;
   createdAt: string | Date;
-  dueDate: string | Date;  // Añadimos la propiedad dueDate
-  people?: Person[];       // Asegúrate de que la propiedad people esté presente si la usas
+  dueDate: string | Date;  
+  people?: Array<Person>;      
 }
 
 export type TodoStatus = 'empty' | 'in-progress' | 'finished';

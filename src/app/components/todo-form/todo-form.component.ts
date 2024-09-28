@@ -70,10 +70,10 @@ export class TodoFormComponent {
     }
   
     const dueDate = new Date(this.todoForm.value.dueDate);
-    dueDate.setHours(0, 0, 0, 0); // Ignorar horas para comparación
+    dueDate.setHours(0, 0, 0, 0); 
   
     const currentDate = new Date();
-    currentDate.setHours(0, 0, 0, 0); // Ignorar horas para comparación
+    currentDate.setHours(0, 0, 0, 0); 
   
     if (dueDate < currentDate) {
       alert('La fecha debe ser igual o mayor a la actual');

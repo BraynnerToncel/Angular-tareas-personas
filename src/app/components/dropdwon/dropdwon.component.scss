@@ -7,7 +7,7 @@ $select_height: 40px;
     flex-direction: column;
     cursor: pointer;
     width: 100%;
-    min-width: $select_width; // Mantén el ancho mínimo definido
+    min-width: $select_width; 
 
     .select {
         width: 100%;
@@ -36,10 +36,10 @@ $select_height: 40px;
         position: absolute;
         display: flex;
         flex-direction: column;
-        margin-top: $select_height; // Mantén la distancia entre el botón y las opciones
-        width: $select_width; // Ancho del dropdown
-        left: 50%; // Centra el contenedor de opciones
-        transform: translateX(-50%); // Ajusta la posición para centrarlo
+        margin-top: $select_height; 
+        width: $select_width; 
+        left: 50%; 
+        transform: translateX(-50%); 
         max-height: 200px;
         overflow-y: auto;
         overflow-x: hidden;
@@ -85,9 +85,9 @@ $select_height: 40px;
 
 
 .small-dropdown {
-    max-width: 200px; /* Ajustar el ancho del dropdown */
-    margin: 10px auto; /* Mantener el centrado */
-    font-size: 0.75em; /* Reducir el tamaño de fuente del dropdown */
-    height: 30px; /* Ajustar la altura del dropdown */
+    max-width: 200px; 
+    margin: 10px auto; 
+    font-size: 0.75em; 
+    height: 30px; 
   }
   

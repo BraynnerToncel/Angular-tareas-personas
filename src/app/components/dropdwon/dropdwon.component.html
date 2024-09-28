@@ -1,5 +1,5 @@
 <div class="selectContainer">
-  <div (click)="toggleDropdown()" class="select small-dropdown"> <!-- Agregar clase small-dropdown aquí -->
+  <div (click)="toggleDropdown()" class="select small-dropdown"> 
     <ng-container *ngIf="optionSelected?.name; else placeholderTemplate">
       <p class="option-select">
         <span>{{ optionSelected.name }}</span>
