@@ -1,0 +1,41 @@
+<mat-card *ngIf="todo" class="todo-card">
+  <div class="header-container">
+    <div class="date-container">
+      <p *ngIf="todo.createdAt">{{ todo.createdAt | dateFormat }}</p>
+    </div>
+    <mat-card-header class="header-content">
+      <mat-card-title>{{ todo.description }}</mat-card-title>
+      <mat-card-subtitle *ngIf="todo.dueDate">{{ todo.dueDate | dateFormat }}</mat-card-subtitle>
+    </mat-card-header>
+  </div>
+
+  <mat-card-content>
+    <div class="people-container">
+      <p><strong>Personas Asociadas:</strong></p>
+      <div *ngFor="let person of todo.people" class="person-details">
+        <p>{{ person.fullName }} (Edad: {{ person.age }})</p>
+        <h4>Habilidades:</h4>
+        <ul class="skills-list">
+          <li *ngFor="let skill of person.skills">{{ skill }}</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="status-container">
+      <p><strong>Status:</strong></p>
+      <app-dropdown  
+        class="status-dropdown small-dropdown"
+        [options]="statusOptions"
+        [optionSelected]="optionSelected"
+        (onSelect)="changeStatus($event)"
+      ></app-dropdown>
+    </div>
+    
+  </mat-card-content>
+
+  <mat-card-actions class="actions-container">
+    <button mat-raised-button color="warn" (click)="removeTodo()">
+      <mat-icon>delete</mat-icon> Eliminar
+    </button>
+  </mat-card-actions>
+</mat-card>

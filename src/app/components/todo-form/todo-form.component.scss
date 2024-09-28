@@ -1,0 +1,26 @@
+.container {
+  padding: 20px;
+  display: flex;
+  flex-direction: column; /* Alinear en columna */
+  align-items: center;     /* Centrar horizontalmente */
+  width: 100%;             /* Ocupar el 100% del ancho */
+}
+
+mat-form-field {
+  width: 100%;             /* Hacer que el campo ocupe el ancho completo */
+  max-width: 700px;       /* Limitar el ancho máximo a 400px o el tamaño que prefieras */
+  margin-bottom: 16px;
+}
+
+button {
+  width: 100%;             /* Hacer que los botones ocupen el ancho completo */
+  max-width: 300px;       /* Limitar el ancho máximo si es necesario */
+  margin-top: 10px;       /* Espacio entre botones */
+}
+
+/* Estilos para los contenedores de botones */
+.button-container {
+  display: flex;
+  justify-content: space-between; /* Alinear los botones a los extremos */
+  margin-top: 20px;               /* Espacio superior entre las habilidades/personas y los botones */
+}

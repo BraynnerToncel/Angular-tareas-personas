@@ -1,0 +1,93 @@
+$select_width: 200px;
+$select_height: 40px;
+
+.selectContainer {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+    width: 100%;
+    min-width: $select_width; // Mantén el ancho mínimo definido
+
+    .select {
+        width: 100%;
+        color: black;
+        height: $select_height;
+        border: 1px solid rgba(0, 0, 0, 0.474);
+        font-size: 14px;
+        padding: 0 1rem;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        border-radius: 10px;
+        
+        .withOpacity {
+            color: white;
+        }
+
+        &:hover {
+            transition-duration: 0.3s;
+            filter: brightness(1.5);
+        }
+    }
+    
+
+    .options {
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        margin-top: $select_height; // Mantén la distancia entre el botón y las opciones
+        width: $select_width; // Ancho del dropdown
+        left: 50%; // Centra el contenedor de opciones
+        transform: translateX(-50%); // Ajusta la posición para centrarlo
+        max-height: 200px;
+        overflow-y: auto;
+        overflow-x: hidden;
+        border: 1px solid rgba(0, 0, 0, 0.474);
+        z-index: 999;
+
+        .option {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            height: 40px;
+            font-size: 14px;
+            color: white;
+            text-decoration: none;
+            background: rgba(0, 0, 0, 0.719);
+            padding: 10px 1rem;
+            font-weight: normal;
+            border-bottom: 1px solid #ffffff10;
+
+            &:last-child {
+                border: none;
+            }
+
+            &:hover {
+                transition-duration: 0.3s;
+                font-weight: bold;
+            }
+        }
+
+
+    }
+
+    .options::-webkit-scrollbar {
+        width: 2px;
+        background: #6b00d5;
+    }
+
+    .options::-webkit-scrollbar-thumb {
+        border: 3px solid black;
+    }
+}
+
+
+
+.small-dropdown {
+    max-width: 200px; /* Ajustar el ancho del dropdown */
+    margin: 10px auto; /* Mantener el centrado */
+    font-size: 0.75em; /* Reducir el tamaño de fuente del dropdown */
+    height: 30px; /* Ajustar la altura del dropdown */
+  }
+  

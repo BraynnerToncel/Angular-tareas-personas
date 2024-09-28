@@ -1,0 +1,70 @@
+<form [formGroup]="todoForm" (ngSubmit)="addTodo()">
+  <mat-form-field appearance="fill">
+    <mat-label>Nombre</mat-label>
+    <input matInput formControlName="description" placeholder="Descripción de la tarea" />
+    <mat-error *ngIf="todoForm.get('description')?.hasError('required')">Este campo es obligatorio.</mat-error>
+  </mat-form-field>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Estado</mat-label>
+    <mat-select formControlName="status">
+      <mat-option *ngFor="let option of formOptions" [value]="option.value">
+        {{ option.name }}
+      </mat-option>
+    </mat-select>
+    <mat-error *ngIf="todoForm.get('status')?.hasError('required')">Este campo es obligatorio.</mat-error>
+  </mat-form-field>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Fecha Límite</mat-label>
+    <input matInput [matDatepicker]="picker" formControlName="dueDate" placeholder="Seleccione la fecha límite">
+    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+    <mat-datepicker #picker></mat-datepicker>
+    <mat-error *ngIf="todoForm.get('dueDate')?.hasError('required')">Este campo es obligatorio.</mat-error>
+    <mat-error *ngIf="todoForm.get('dueDate')?.hasError('invalidDate')">La fecha debe ser mayor o igual a la actual.</mat-error>
+  </mat-form-field>
+  
+  
+
+  <div formArrayName="people">
+    <div *ngFor="let person of people.controls; let i = index" [formGroupName]="i">
+      <mat-form-field appearance="fill">
+        <mat-label>Nombre completo</mat-label>
+        <input matInput formControlName="fullName" placeholder="Nombre completo" />
+        <mat-error *ngIf="person.get('fullName')?.hasError('required')">Este campo es obligatorio.</mat-error>
+      </mat-form-field>
+
+      <mat-form-field appearance="fill">
+        <mat-label>Edad</mat-label>
+        <input matInput formControlName="age" placeholder="Edad" type="number" />
+        <mat-error *ngIf="person.get('age')?.hasError('required')">Este campo es obligatorio.</mat-error>
+        <mat-error *ngIf="person.get('age')?.hasError('min')">La edad mínima es 18.</mat-error>
+      </mat-form-field>
+
+      <div formArrayName="skills">
+        <div *ngFor="let skill of getPersonSkills(i).controls; let j = index">
+          <mat-form-field appearance="fill">
+            <mat-label>Habilidad</mat-label>
+            <input matInput [formControlName]="j" placeholder="Habilidad" />
+            <mat-error *ngIf="skill.hasError('required')">Este campo es obligatorio.</mat-error>
+          </mat-form-field>
+
+          <button mat-button color="warn" type="button" (click)="removeSkill(i, j)">
+            Eliminar habilidad
+          </button>
+        </div>
+        <button mat-button type="button" (click)="addSkill(i)">Añadir habilidad</button>
+      </div>
+
+      <button mat-button color="warn" type="button" (click)="removePerson(i)">
+        Eliminar persona
+      </button>
+    </div>
+  </div>
+
+  <button mat-button type="button" (click)="addPerson()">Añadir persona</button>
+
+  <button mat-raised-button color="primary" type="submit">Guardar Tarea</button>
+  <mat-error *ngIf="people.errors?.['duplicateNames']">Los nombres de las personas no pueden ser duplicados.</mat-error>
+
+</form>

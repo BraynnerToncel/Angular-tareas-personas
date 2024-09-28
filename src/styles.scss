@@ -1,1 +1,27 @@
-/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+
+*{
+  box-sizing: border-box;
+  outline: none;
+  font-family: 'Rubik', sans-serif;
+}
+body{
+  background: linear-gradient(to right, #f3f4f6, #e3e5e8);
+}
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+
+.spacer {
+  flex: 1 1 auto; 
+}
+
+section {
+  margin-bottom: 2rem; /* Ajusta el valor según necesites */
+}
+
+
+@import '~@angular/material/prebuilt-themes/indigo-pink.css';
+
+
+
